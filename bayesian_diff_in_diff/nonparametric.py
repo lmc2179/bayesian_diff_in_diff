@@ -30,3 +30,9 @@ class NonparametricDiffInDiff(object):
             
     def print_summary(self):
         print(np.mean(self.treatment_effect_samples))
+
+    def plot_means(self):
+        plt.plot([0, 1], [np.mean(self.group_mean_samples[0,0]), np.mean(self.group_mean_samples[1, 0])], marker='o', label='Group 0')
+        plt.plot([0, 1], [np.mean(self.group_mean_samples[0,1]), np.mean(self.group_mean_samples[1, 1])], marker='o', label='Group 1, observed')
+        plt.plot([0, 1], [np.mean(self.group_mean_samples[0,1]), np.mean(self.group_mean_samples[1, 1] - self.treatment_effect_samples)], marker='o', linestyle='dotted', label='Group 1, counterfactual')
+        plt.legend()
