@@ -1,0 +1,5 @@
+numpy
+pandas
+matplotlib
+bayesian_bootstrap
+pymc

@@ -1,0 +1,2 @@
+class AbstractDiffInDiff(object):
+    pass
